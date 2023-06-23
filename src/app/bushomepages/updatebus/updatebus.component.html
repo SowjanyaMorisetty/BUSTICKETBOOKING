@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Update Bus</h1>
+    <input type="text" placeholder="Bus Name"  required [(ngModel)]="busName">
+    <input type="text" placeholder="Total Seats"  required [(ngModel)]="totalSeats">
+    <input type="text" placeholder="Bus Number"  required [(ngModel)]="busNumber">
+      <input type="text" placeholder="Reg Number"  required [(ngModel)]="regNo">
+      <input type="text" placeholder="Engine Number" required [(ngModel)]="engineNumber">
+    <select name="busType" id="busType"  required [(ngModel)]="busType">
+      <option value="" disabled selected>Select Bus Type</option>
+      <option value="AC">AC</option>
+      <option value="Non-AC">Non-AC</option>
+    </select>
+    <button type="submit" (click)="updateBus()">Add Bus</button>
+</div>

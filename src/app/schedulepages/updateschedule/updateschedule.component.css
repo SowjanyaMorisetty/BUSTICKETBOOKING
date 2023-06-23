@@ -1,0 +1,10 @@
+@media (max-width: 767px) {
+    /* Styles for screens smaller than 768px (e.g., mobile devices) */
+    .container {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    
+    /* Additional responsive styles... */
+  }
+  
