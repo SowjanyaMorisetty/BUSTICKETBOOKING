@@ -11,6 +11,7 @@ import { Seat } from './model/seat';
   providedIn: 'root'
 })
 export class ServiceService {
+  [x: string]: any;
   loginUrl!:string;
   signupUrl!:string;
   getUrl!:string;
@@ -38,14 +39,15 @@ export class ServiceService {
   numofseats: Array<number>=[];
 
   scheduleId: number=0;
+  regNo:string='';
   
   constructor(private http:HttpClient) {
     this.signupUrl="http://localhost:8080/registerNewUser";
     this.loginUrl="http://localhost:8080/login";
     this.getUrl="http://localhost:8080/users";
-    this.addbusUrl="http://localhost:8080/bus";
-    this.deleteUrl="http://localhost:8080/bus";
-    this.updateUrl="http://localhost:8080/bus";
+    this.addbusUrl="http://localhost:8081/api/v1/buses/bus";
+    this.deleteUrl="http://localhost:8081/bus";
+    this.updateUrl="http://localhost:8081/api/v1/buses/bus";
     this.addscheduleUrl="http://localhost:8082/api/v1/schedules/schedule";
    }
      signupok(user:User):Observable<any>{
@@ -58,11 +60,17 @@ export class ServiceService {
     addbusok(bus:Bus):Observable<any>{
       return this.http.post(this.addbusUrl,bus);
     }
-    deleteDataById(id:string): Observable<void> {
-      return this.http.delete<void>(`${this.deleteUrl}/${id}`);
+    // deleteDataById(id:string): Observable<void> {
+    //   return this.http.delete<void>(`${this.deleteUrl}/${id}`);
+    // }
+    updateBus(updatedBus: Bus): Observable<any> {
+      return this.http.put(this.addbusUrl,updatedBus);
     }
-    updateBusByEngineNumber(engineNumber: string, updatedBus: Bus): Observable<any> {
-      return this.http.put(`${this.updateUrl}/${engineNumber}`, updatedBus);
+    getBus(){
+      return this.http.get(this.addbusUrl);
+    }
+    getBusByRegNo(regNo:string){
+      return this.http.get(`http://localhost:8081/api/v1/buses/bus/number/${regNo}`);
     }
     search(date: string, source: string, dest: string) {
       return this.http.get(`http://localhost:8082/api/v1/schedules/schedule/${date}/${source}/${dest}`);
@@ -70,8 +78,11 @@ export class ServiceService {
     searchbus(date: string, source: string, dest: string) {
       return this.http.get(`http://localhost:8082/api/v1/schedules/schedule/bus/${date}/${source}/${dest}`);
     }
-    addscheduleok(schedule:Schedule):Observable<any>{
-      return this.http.post(this.addscheduleUrl,schedule);
+    addschedule(schedule:Schedule):Observable<any>{
+      return this.http.post(`http://localhost:8082/api/v1/schedules/schedule/post`,schedule);
+    }
+    getschedule(){
+      return this.http.get(`http://localhost:8082/api/v1/schedules/schedule/get`);
     }
     getfare(date: string, source: string, dest: string) {
       return this.http.get(`http://localhost:8082/api/v1/schedules/schedule/fare/${date}/${source}/${dest}`);

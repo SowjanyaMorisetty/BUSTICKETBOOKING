@@ -2,10 +2,12 @@
 
 .navbar {
 
-    background-color:black;
-     
-
-    height: 12vh;
+    background-color: black;
+    height: 15vh;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+      
 
 }
 

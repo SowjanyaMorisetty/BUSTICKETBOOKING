@@ -19,15 +19,10 @@ export class SeatavailabilityComponent  {
   bookedSeats:Array<number> = [];
   constructor(private demosearch:ServiceService) {
 
- 
-
     this.seats = Array(40).fill('available');
 
     setInterval(() => this.process(), 100);
-
- 
-
-  }
+}
  
   ngOnInit()
   {
@@ -35,57 +30,26 @@ export class SeatavailabilityComponent  {
   }
   process(): void {
 
-   
-
-    // this.seats = Array(40).fill('available');
-
-    
-
     console.log(this.demosearch.seat)
 
     this.seat = this.demosearch.seat
-
-   
-
-    this.seat.forEach((s, i) => {
-
-
-
-
-      if (s.fHault===this.fhault &&s.tHault===this.thault &&s.status===1) {
-
-       
-
-        this.seats[s.seatNo - 1] = 'booked'
+ this.seat.forEach((s, i) => {
+ if (s.fHault===this.fhault &&s.tHault===this.thault &&s.status===1) {
+  this.seats[s.seatNo - 1] = 'booked'
 
       };
-
-      
-
-
-
-    });
+ });
 
   }
-
-
-
-  toggleSeatStatus(index: number) {
+toggleSeatStatus(index: number) {
     if (this.seats[index] === 'booked') {
         return;
     }
 
-
-
-
     if (this.seats[index] === 'available') {
 
       console.log(this.seat);
-
-
-
-
-      this.seats[index] = 'temporarily-booked';
+  this.seats[index] = 'temporarily-booked';
 
       this.seatNo = this.seatNo + 1;
 
@@ -106,45 +70,22 @@ export class SeatavailabilityComponent  {
       }
 
 
-
-
-
-
     } else {
-
-
-
-
-      this.seats[index] = 'available';
+ this.seats[index] = 'available';
 
       this.seatNo = this.seatNo - 1;
 
       this.unbookSeats(index + 1);
 
-
-
-
-
     }
 
-
-
-
   }
-
-
-
-
-  public bookSeats(index: number) {
+ public bookSeats(index: number) {
 
     this.bookedSeats.push(index);
 
   }
-
-
-
-
-  public unbookSeats(ind: number) {
+public unbookSeats(ind: number) {
 
     let index = this.bookedSeats.indexOf(ind);
 
@@ -161,6 +102,11 @@ export class SeatavailabilityComponent  {
 
   }
 
-
 }
+
+
+
+
+
+
 

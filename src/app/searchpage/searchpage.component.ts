@@ -36,9 +36,7 @@ export class SearchpageComponent {
   fareOfSchedule:number=0
  
 
-
-
-
+  
   getDropdownValues(): void {
     this.demosearch.getDropdownValues().subscribe(
       (values: string[]) => {
@@ -144,3 +142,5 @@ export class SearchpageComponent {
       this.fareOfSchedule=f
     }
 }
+
+

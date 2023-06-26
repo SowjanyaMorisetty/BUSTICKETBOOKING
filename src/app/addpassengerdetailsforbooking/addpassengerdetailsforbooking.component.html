@@ -155,35 +155,51 @@
   <div class="container">
     <div class="card" *ngFor="let passenger of passengers; let i = index">
       <div class="card-body" >
-        <p>passenger{{i+1}}</p>
+        <p>passenger{{i+1}}, Seat Number{{numofseats[i]}}</p>
         <div class="card-row">
           <div class="col">
             <label for="name{{i}}">Name:</label>
-            <input type="text" class="form-control" id="name{{i}}" placeholder="Enter name" required>
+            <input type="text" class="form-control" id="name{{i}}" [(ngModel)]="name[i]" placeholder="Enter name" required>
+            <div *ngIf="nameErrors[i]" class="error-message" style="color: red;">
+              {{ nameErrors[i] }}
+            </div>
           </div>
         </div>
         <div class="card-row">
           <div class="col">
             <label for="age{{i}}">Age:</label>
-            <input type="number" class="form-control" id="age{{i}}" placeholder="Enter age" required>
+            <input type="number" class="form-control" id="age{{i}}" [(ngModel)]="age[i]" placeholder="Enter age" required>
+            <div *ngIf="ageErrors[i]" class="error-message" style="color: red;">
+              {{ ageErrors[i] }}
+            </div>
           </div>
           <div class="col">
             <label for="gender{{i}}">Gender:</label>
-            <select class="form-control" id="gender{{i}}" required>
+            <select class="form-control" id="gender{{i}}" [(ngModel)]="gender[i]" required>
+
               <option value="" disabled selected>Select gender</option>
               <option value="female">Female</option>
               <option value="male">Male</option>
             </select>
+            <div *ngIf="genderErrors[i]" class="error-message" style="color: red;">
+              {{ genderErrors[i] }}
+            </div>
           </div>
         </div>
         <div class="card-row">
           <div class="col">
             <label for="email{{i}}">Email:</label>
-            <input type="email" class="form-control" id="email{{i}}" placeholder="Enter email" required>
+            <input type="email" class="form-control" id="email{{i}}" [(ngModel)]="email[i]"  placeholder="Enter email" required>
+            <div *ngIf="emailErrors[i]" class="error-message" style="color: red;">
+              {{ emailErrors[i] }}
+            </div>
           </div>
           <div class="col">
             <label for="mobile{{i}}">Mobile Number:</label>
-            <input type="text" class="form-control" id="mobile{{i}}" placeholder="Enter mobile number" required>
+            <input type="text" class="form-control" id="mobileNo{{i}}" [(ngModel)]="mobileNo[i]" placeholder="Enter mobile number" required>
+            <div *ngIf="mobileErrors[i]" class="error-message" style="color: red;">
+              {{ mobileErrors[i] }}
+            </div>
           </div>
         </div>
         <div class="text-center">
@@ -192,7 +208,7 @@
       </div>
       
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" (click)="submitForm()">Submit</button>
   </div>
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

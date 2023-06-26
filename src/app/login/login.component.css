@@ -43,12 +43,31 @@
     color: rgb(146, 19, 19);
     font-size: small;
   }
-  body
-  {
-    background: rgba(167, 172, 175, 0.85);
+  body {
+
+    background: linear-gradient(to bottom, #88898a, #344043);
+
+    background-image: linear-gradient(rgba(199, 154, 154, 0.6), rgba(39, 38, 38, 0.6)), url("src\assets\image\navbarbackground.png");
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
     background-size: cover;
+
     height: 100vh;
-    weight:100vh;
+
+    width: 100vw;
+
+    background-position: center;
+
+
+
+
+   
+
+   
+
   }
   
   
@@ -57,7 +76,7 @@
     padding: 10px 20px 20px 20px;
     width: 90%;
     max-width: 320px;
-    background: rgba(14, 13, 13, 0.3);
+    background: rgba(14, 13, 13, 0.7);
     /* opacity: 0.5; */
     position: relative;
     padding-bottom: 80px;
@@ -118,12 +137,13 @@
     text-decoration: none;
   }
   .login .title {
-    color: #444;
+    color: #a9a6a6;
     font-size: 1.2em;
     font-weight: bold;
     margin: 10px 0 30px 0;
     border-bottom: 1px solid #eee;
     padding-bottom: 20px;
+    text-align: center;
   }
   .login button {
     width: 100%;
@@ -170,7 +190,7 @@
 
   .create-account span {
     cursor: pointer;
-    color: rgb(11, 15, 12);
+    color: rgb(223, 230, 226);
   }
   .create-account{
     color: #2196F3;
