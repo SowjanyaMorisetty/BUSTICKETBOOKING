@@ -19,6 +19,7 @@
     font-weight: 600;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    padding-top: 30px;
   }
   .container{
     display: flex;
@@ -30,4 +31,25 @@
   .main{
     background-color: rgb(255, 255, 255);
     height: 100vh;
+    padding-top: 20px;
+  }
+
+  .custom-shape-divider-top-1687251883 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+  
+  .custom-shape-divider-top-1687251883 svg {
+    position: relative;
+    display: block;
+    width: calc(169% + 1.3px);
+    height: 500px;
+  }
+  
+  .custom-shape-divider-top-1687251883 .shape-fill {
+    fill: #A80A1D;
   }

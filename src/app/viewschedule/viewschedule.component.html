@@ -1,29 +1,42 @@
 <div class="body">
 
-    <div class="row">
-  
-      <div class="col-sm-4" *ngFor="let b of schedule; let i = index;">
-  
-        <div class="row">
-  
-          <div class="col-sm-12">
-  
-            <div class="card d-flex flex-column my-3"> <!-- Added 'y-3' class for margin -->
-  
-              <p>Schedule Id:{{schedule[i].scheduleId}}</p><br>
-              <p>Date:{{schedule[i].date}}</p><br>
-              <p>Departure Time:{{schedule[i].departureTime}}</p><br>
-              <p>Arrival Time:{{schedule[i].arrivalTime}}</p><br>
-              <p>Route Id:{{schedule[i].routeId}}</p><br>
-              <p>Bus Id:{{schedule[i].busId}}</p>
-            </div>
-  
+
+
+
+  <div class="row">
+
+    <div class="col-sm-4" *ngFor="let b of schedule; let i = index;">
+
+      <!-- <div class="row"> -->
+
+        <div class="col-sm-12">
+
+          <div class="card d-flex flex-column my-3"> <!-- Added 'y-3' class for margin -->
+
+            <p class="para1"><b>Schedule Id: </b>{{schedule[i].scheduleId}}</p><br>
+
+            <p class="para"><b>Date: </b>{{schedule[i].date}}</p><br>
+
+            <p class="para"><b>Departure Time: </b>{{schedule[i].departureTime}}</p><br>
+
+            <p class="para"><b>Arrival Time: </b>{{schedule[i].arrivalTime}}</p><br>
+
+            <p class="para"><b>Route Id: </b>{{schedule[i].routeId}}</p><br>
+
+            <p class="para"><b>Bus Id: </b>{{schedule[i].busId}}</p>
+
           </div>
-  
-        </div>
-  
+
+        <!-- </div> -->
+
       </div>
-  
+
     </div>
-  
+
   </div>
+
+</div>
+
+
+
+

@@ -1,150 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>Passenger Details</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    body {
-      background-color: #1a1a1a;
-      color: #fff;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .dark-theme .container {
-      background-color: #1a1a1a;
-      
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .dark-theme .seats-container {
-      display:contents;
-      grid-template-columns: repeat(6, 1fr);
-      grid-gap: 100px;
-    }
-
-    .dark-theme h1,
-    .dark-theme p {
-      color: #fff;
-      text-align: center;
-    }
-
-    .dark-theme .card {
-      background-color: #333;
-      max-width: 400px;
-      margin-bottom: 20px; /* Added margin bottom for spacing */
-      border-radius: 10px;
-    }
-
-    .dark-theme .card-body {
-      padding: 40px;
-    }
-
-    .dark-theme .form-group label {
-      color: #fff;
-      font-weight: bold;
-    }
-
-    .dark-theme .form-control {
-      background-color: #7460a7;
-      color: #fff;
-      border-color: #7460a7;
-    }
-
-    .dark-theme .form-control:focus {
-      box-shadow: 0 0 0 0.2rem rgba(116, 96, 167, 0.5);
-    }
-
-    .dark-theme .btn-primary {
-      background-color: #7460a7;
-      border-color: #7460a7;
-      padding: 10px 30px;
-      font-size: 16px;
-      font-weight: bold;
-      margin-top: 20px;
-      transition: background-color 0.3s ease;
-    }
-
-    .dark-theme .btn-primary:hover {
-      background-color: #5b4882;
-      border-color: #5b4882;
-    }
-    
-    /* Added custom CSS for arranging form elements */
-    .form-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    
-    .form-group label {
-      flex-basis: 100%;
-    }
-    
-    @media (min-width: 576px) {
-      .form-group label {
-        flex-basis: 50%;
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .form-group label {
-        flex-basis: 33.33%;
-      }
-    }
-    
-    @media (min-width: 992px) {
-      .form-group label {
-        flex-basis: 25%;
-      }
-    }
-  </style>
-</head>
-<body class="dark-theme">
-  <div class="container">
-    <div class="card">
-      <div class="card-body">
-        <h1>Passenger Details</h1>
-        <div class="seats-container">
-          <div class="form-group" *ngFor="let passenger of passengers; let i = index">
-            <p style="font-weight: bold;">Passenger {{i+1}}</p>
-            <div class="row">
-              <div class="col-md-4">
-                <label for="name{{i}}">Name:</label>
-                <input type="text" class="form-control" id="name{{i}}" required>
-              </div>
-              <div class="col-md-4">
-                <label for="age{{i}}">Age:</label>
-                <input type="number" class="form-control" id="age{{i}}" required>
-              </div>
-              <div class="col-md-4">
-                <label for="gender{{i}}">Gender:</label>
-                <select class="form-control" id="gender{{i}}" required>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div class="col-md-4">
-                <label for="mobile{{i}}">Mobile:</label>
-                <input type="text" class="form-control" id="mobile{{i}}" required>
-              </div>
-              <div class="col-md-4">
-                <label for="email{{i}}">Email:</label>
-                <input type="email" class="form-control" id="email{{i}}" required>
-              </div>
-            </div>
-          </div>
-          <button class="btn btn-primary" type="submit">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html> -->
 
 
 
@@ -153,7 +6,20 @@
 
 <div class="main">
   <div class="container">
-    <div class="card" *ngFor="let passenger of passengers; let i = index">
+    <div class="custom-shape-divider-top-1687251883">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+              opacity=".25" class="shape-fill"></path>
+          <path
+              d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+              opacity=".5" class="shape-fill"></path>
+          <path
+              d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+              class="shape-fill"></path>
+      </svg>
+  </div>
+    <div class="card mb-3" *ngFor="let passenger of passengers; let i = index">
       <div class="card-body" >
         <p>passenger{{i+1}}, Seat Number{{numofseats[i]}}</p>
         <div class="card-row">
@@ -175,9 +41,9 @@
           </div>
           <div class="col">
             <label for="gender{{i}}">Gender:</label>
-            <select class="form-control" id="gender{{i}}" [(ngModel)]="gender[i]" required>
+            <select class="form-control" id="gender{{i}}" [(ngModel)]="gender[i]" required name="gender">
 
-              <option value="" disabled selected>Select gender</option>
+              <option value="gender" disabled selected>Select gender</option>
               <option value="female">Female</option>
               <option value="male">Male</option>
             </select>
@@ -208,7 +74,7 @@
       </div>
       
     </div>
-    <button type="submit" class="btn btn-primary" (click)="submitForm()">Submit</button>
+    <button type="submit" class="btn btn-primary" (click)="submitForm()">Review your journey</button>
   </div>
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

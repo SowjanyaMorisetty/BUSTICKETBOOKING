@@ -21,6 +21,7 @@ export class UpdatebusComponent{
 	totalSeats!:number;
   bus: Bus = new Bus();
   selectedBus:any;
+  errormessage:string='';
   constructor(private serviceService:ServiceService,private router:Router){}
   
   getdetails(regNo:string){
@@ -29,10 +30,19 @@ export class UpdatebusComponent{
       response => {
         this.selectedBus = response;
         console.log(this.selectedBus);
+        // this.router.navigate(['/mainhomepage']);
         
         
-      }
-    )
+      },
+      
+      (error) => {
+  
+        console.error(error);
+  
+        this.errormessage = "BUS NOT FOUND";}
+
+    
+    );
   }
   updateBus(){
     this.bus = new Bus();
@@ -60,19 +70,12 @@ export class UpdatebusComponent{
             alert("Bus updated successfully");
 
             // Handle any additional logic or UI updates here
-
-          },
-
-          error => {
-
-            console.error('Failed to update bus:', error);
-
-            // Handle error scenarios here
+            this.router.navigate(['/mainhomepage']);
 
           }
 
+          
+
         );
-
-    }
-
+        }
 }

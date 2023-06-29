@@ -24,6 +24,7 @@ import { UpdatebusComponent } from './updatebus/updatebus.component';
 import { ViewbusComponent } from './viewbus/viewbus.component';
 import { ViewscheduleComponent } from './viewschedule/viewschedule.component';
 import { AddscheduleComponent } from './addschedule/addschedule.component';
+import { ViewrouteComponent } from './viewroute/viewroute.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AddscheduleComponent } from './addschedule/addschedule.component';
     UpdatebusComponent,
     ViewbusComponent,
     ViewscheduleComponent,
-    AddscheduleComponent
+    AddscheduleComponent,
+    ViewrouteComponent
     ],
   imports: [
     BrowserModule,

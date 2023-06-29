@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" >
     <div class="row justify-content-center">
-      <div class="col-lg-6">
+      <div class="col-lg-8 col-md-10">
         <div class="card">
           <div class="card-body">
             <div class="search-bar" style="position: relative">
@@ -8,13 +8,19 @@
                 <div class="col">
                   <input type="text" class="form-control" id="name" placeholder="Enter Bus Registration number" [(ngModel)]="regNo" name="regNo">
                 </div>
-                <div class="col">
-                  <button class="btn btn-primary" style="background-color:#A80A1D" (click)="getdetails(regNo)">Search</button>
+                <div style="font-weight: bold; color: rgb(151, 20, 20); margin-left: 140px; text-align: center;" class="error-message">
+
+                 <p> {{ errormessage }}</p>
+    
                 </div>
+                <div class="col">
+                  <button class="btn btn-primary" style="background-color:#A80A1D " (click)="getdetails(regNo)">Search</button>
+                </div>
+                
               </div>
             </div>
             
-            <form *ngIf="selectedBus">
+            <form class="form" *ngIf="selectedBus">
               <div class="form-group">
                 <input type="number" class="form-control small-input" id="id" [(ngModel)]="selectedBus.busId" name="busId">
               </div>
@@ -36,8 +42,9 @@
               <div class="form-group">
                 <input type="number" class="form-control small-input" id="seats" placeholder="Enter Total Seats" [(ngModel)]="selectedBus.totalSeats" name="totalSeats">
               </div>
+              
               <div class="button-container">
-                <button class="btn btn-primary btn-sm" type="submit" (click)="updateBus()">Update</button>
+                <button class="btn btn-primary btn-sm" type="submit" routerLink="/main" (click)="updateBus()">Update</button>
               </div>
             </form>
           </div>

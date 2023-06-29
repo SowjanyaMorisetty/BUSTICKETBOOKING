@@ -43,8 +43,13 @@
                     <div class="form-group">
                         <input type="number" class="form-control" id="seats" placeholder="Enter Total Seats" [(ngModel)]="totalSeats" name="totalSeats">
                     </div>
+                    <div style="font-weight: bold; color: rgb(151, 20, 20); margin-left: 140px; text-align: center;" class="error-message">
+
+                        {{ errorMessage }}
+          
+                      </div>
                     <div class="button-container">
-                        <button class="btn btn-primary btn-sm" type="submit" (click)="addbus()">Add</button >
+                        <button class="btn btn-primary btn-sm" type="submit" (click)="addbus() ">Add</button >
                     </div>
                 </form>
             </div>

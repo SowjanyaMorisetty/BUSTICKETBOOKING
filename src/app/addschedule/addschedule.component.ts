@@ -12,36 +12,44 @@ export class AddscheduleComponent {
 
 
 
-    scheduleId: number=0;
-    date: string | undefined;
-    departureTime: string | undefined;
-    arrivalTime: string | undefined;
-    routeId: number | undefined;
-    busId: number | undefined;
-    schedule:Schedule=new Schedule(); 
+    scheduleId!: number
+    date!: Date
+    departureTime!: Date
+    arrivalTime!: Date
+    routeId!: number
+    busId!: number
+    errormessage:string='';
+    // schedule:Schedule; 
 
   constructor(private service:ServiceService,private router:Router){}
     addschedule(){
-      this.schedule.scheduleId=this.scheduleId;
-      this.schedule.date=this.date;
-      this.schedule.departureTime=this.departureTime;
-      this.schedule.arrivalTime=this.arrivalTime;
-      this.schedule.routeId=this.routeId;
-      this.schedule.busId=this.busId;
+      const schedule = new Schedule(this.scheduleId,this.date,this.departureTime,this.arrivalTime,this.routeId,this.busId)
+      // this.schedule.scheduleId=this.scheduleId;
+      // this.schedule.date=this.date;
+      // this.schedule.departureTime=this.departureTime;
+      // this.schedule.arrivalTime=this.arrivalTime;
+      // this.schedule.routeId=this.routeId;
+      // this.schedule.busId=this.busId;
 
-      this.service.addschedule(this.schedule).subscribe(
+      this.service.addschedule(schedule).subscribe(
 
         response => {
   
           console.log(response);
+          alert("Schedule Added");
+          this.router.navigate(['/mainhomepage']);
+        },
+        (error) => {
   
-          
-  
-        }
+          console.error(error);
+    
+          this.errormessage = "SCHEDULE-ID ALREADY EXIST";
+    
+    }
   
         );
   
-        alert("Schedule Added");
+        
     }
 
 }

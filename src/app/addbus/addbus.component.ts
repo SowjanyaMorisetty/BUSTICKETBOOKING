@@ -20,7 +20,8 @@ export class AddbusComponent {
 	busType!:string;
 	busName!:string;
 	totalSeats!:number;
-  bus:Bus=new Bus();
+  errorMessage: string='';
+  bus :Bus= new Bus();
 
   constructor(private service:ServiceService,private router:Router){}
   addbus(){
@@ -36,16 +37,63 @@ export class AddbusComponent {
       response => {
 
         console.log(response);
-
+        alert("Bus Added");
+        this.router.navigate(['/mainhomepage']);
         
 
-      }
+      },
 
+      (error) => {
+  
+              console.error(error);
+        
+              this.errorMessage = "BUS-ID ALREADY EXIST";
+        
+        }
+        
       );
+        
 
-      alert("Bus Added");
+      } 
 
     }
-  }
+
+
+
+
+  // addbus(){
+
+  //   const bus = new Bus(this.busId,this.busNo,this.regNo,this.engineNo,this.busType,this.busName,this.totalSeats)
+  
+     
+  
+  //     this.service.addbusok(bus).subscribe(
+  
+  //       response => {
+  
+  //         console.log(response);
+  
+  //         console.log("bus added")
+  
+  //         this.router.navigate(['/adminhomepage']);
+  
+  //       },
+  
+  //       (error) => {
+  
+  //         console.error(error);
+  
+  //         this.errorMessage = "BUS-ID ALREADY EXIST";
+  
+  //       }
+  
+  //       );
+  
+       
+  
+  //     }
+
+
+  // }
 
 

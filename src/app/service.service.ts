@@ -6,6 +6,7 @@ import { BusDto } from './model/bus-dto';
 import { Schedule } from './model/schedule';
 import { User } from './model/user';
 import { Seat } from './model/seat';
+import { PassengerDto, RequestDto } from './model/request-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +19,11 @@ export class ServiceService {
   deleteUrl!:string
   addbusUrl!:string;
   updateUrl!:string;
+  getrouteUrl!:string;
   addscheduleUrl!:string;
   s1:Schedule[]=[];
   s2:BusDto[]=[];
-  // numofseats!:number;
+  
 
 
   s:Seat[]=[];
@@ -40,12 +42,15 @@ export class ServiceService {
 
   scheduleId: number=0;
   regNo:string='';
+
+  passengerdto:PassengerDto[] = [];
   
   constructor(private http:HttpClient) {
     this.signupUrl="http://localhost:8080/registerNewUser";
     this.loginUrl="http://localhost:8080/login";
     this.getUrl="http://localhost:8080/users";
     this.addbusUrl="http://localhost:8081/api/v1/buses/bus";
+    this.getrouteUrl="http://localhost:8081/api/v1/buses/route";
     this.deleteUrl="http://localhost:8081/bus";
     this.updateUrl="http://localhost:8081/api/v1/buses/bus";
     this.addscheduleUrl="http://localhost:8082/api/v1/schedules/schedule";
@@ -68,6 +73,9 @@ export class ServiceService {
     }
     getBus(){
       return this.http.get(this.addbusUrl);
+    }
+    getRoute(){
+      return this.http.get(this.getrouteUrl);
     }
     getBusByRegNo(regNo:string){
       return this.http.get(`http://localhost:8081/api/v1/buses/bus/number/${regNo}`);
@@ -95,4 +103,7 @@ export class ServiceService {
       return this.http.get(`http://localhost:8082/api/v1/schedules/seat/${s}`);
 
   }
+    book(requestDto:RequestDto): Observable<any> {
+      return this.http.post(`http://localhost:8083/api/v1/bookings/booking`,requestDto);
+    }
   }

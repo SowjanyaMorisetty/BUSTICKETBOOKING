@@ -23,8 +23,8 @@
   }
   
   .ticket-system {
-    max-width: 800vh;
-    padding-left: 50px;
+    
+    padding-left: 5px;
 
     .title {
       font-weight: normal;
@@ -32,9 +32,9 @@
       text-align: left;
       font-family:Arial, sans-serif; 
       /* margin-left: 100px; */
-      margin-bottom: 50px;
+      margin-bottom: 5px;
       color: #b71313;
-      padding-left: 300px;
+      padding-left: 30px;
       
     }
     
@@ -45,7 +45,7 @@
       
 
       .printer {
-        width: 90%;
+        width: 10%;
         height: 20px;
         border: 5px solid #535050;
         border-radius: 10px;
@@ -60,10 +60,10 @@
     }
   
     .receipts {
-      width: 100%;
+      width: 100vw;
       display: flex;
-      align-items: center;
       flex-direction: column;
+      align-items: center;
       transform: translateY(-510px);
   
       animation-duration: 2.5s;
@@ -75,8 +75,8 @@
       .receipt {
         padding: 25px 30px;
         text-align: left;
-        min-height: 200px;
-        width: 88%;
+        min-height: 50px;
+        width: 50vw;
         background-color: #635f5f;
         border-radius: 10px 10px 20px 20px;
         box-shadow: 1px 3px 8px 3px rgba(0, 0, 0, 0.2);
@@ -93,11 +93,12 @@
           justify-content: space-between;
           align-items: center;
           margin: 30px 0;
+          height: 10vh;
           
   
           .plane-icon {
-            width: 30px;
-            height: 30px;
+            width: 10px;
+            height: 10px;
             transform: rotate(90deg);
           }
           h2 {
@@ -127,7 +128,7 @@
             }
             h3 {
               margin-top: 10px;
-              margin-bottom: 25px;
+              margin-bottom: 5px;
             }
           }
         }
@@ -199,6 +200,56 @@
   }
   .arrow-icon
   {
-    margin-right: 40px;;
+   
+    height: 10vh;
+  }
+  .table{
+    width: 100%;
+    margin-top: 30px;
+    background-color: #fff; /* Set the desired background color for the table */
+    border-radius: 10px;
+    padding-right: 30px;
+    
   }
   
+  .table th,
+.table td
+ {
+
+  padding-left: 1px;
+  /* Add styles for table cells if needed */
+}
+.source{
+  text-align: end;
+}
+.destination{
+  text-align: start;
+}
+.arrow{
+  text-align: center;
+}
+.source{
+  padding-left: 100px;
+}
+.destination{
+  padding-right: 100px;
+}
+.custom-shape-divider-top-1687251883 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1687251883 svg {
+  position: relative;
+  display: block;
+  width: calc(169% + 1.3px);
+  height: 500px;
+}
+
+.custom-shape-divider-top-1687251883 .shape-fill {
+  fill: #A80A1D;
+}  

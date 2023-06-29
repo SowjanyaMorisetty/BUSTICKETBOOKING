@@ -1,45 +1,63 @@
-<div>
+<div class="container">
     <div class="row">
-        <div class="form-container">
-            <div class="form-header">
-                <h3>Add Bus</h3>
+        <div class="col-md-8">
+            <div class="form-container">
+                <div class="form-header">
+                    <h3>Add Schedule</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="id" placeholder="Enter Schedule Id" [(ngModel)]="scheduleId" name="scheduleId">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="date" placeholder="yyyy-mm-dd" [(ngModel)]="date" name="date">
+                        </div>
+                        <div class="form-group">
 
-                <form>
-                    <div class="form-group">
-                        <input type="number" class="form-control" id="id" placeholder="Enter Schedule Id" [(ngModel)]="scheduleId" name="scheduleId">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="date" placeholder="Enter date" [(ngModel)]="date" name="date">
-                    </div>
-                    <div class="form-group">
+                            <input type="text" class="form-control" id="deptime" placeholder="Enter depature time"
+                                [(ngModel)]="departureTime"  name="departureTime"/>
+                        </div>
 
-                        <input type="text" class="form-control" id="deptime" placeholder="Enter depature time"
-                            [(ngModel)]="departureTime"  name="departureTime"/>
-                    </div>
+                        <div class="form-group">
 
-                    <div class="form-group">
-
-                        <input type="text" class="form-control" id="arrivalTime" placeholder="Enter arrival Time"
-                            [(ngModel)]="arrivalTime"  name="arrivalTime"/>
-                    </div>
+                            <input type="text" class="form-control" id="arrivalTime" placeholder="Enter arrival Time"
+                                [(ngModel)]="arrivalTime"  name="arrivalTime"/>
+                        </div>
 
 
-                    <div class="form-group">
-                        <input type="number" class="form-control" id="routeId" placeholder="Enter route Id"
-                        [(ngModel)]="routeId" name="routeId">
-                    </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="routeId" placeholder="Enter route Id"
+                            [(ngModel)]="routeId" name="routeId">
+                        </div>
 
-                   
                     
-                    <div class="form-group">
-                        <input type="number" class="form-control" id="busId" placeholder="Enter bus Id" [(ngModel)]="busId" name="busId">
-                    </div>
-                    <div class="button-container">
-                        <button class="btn btn-primary btn-sm" type="submit" (click)="addschedule()">Add Schedule</button >
-                    </div>
-                </form>
+                        
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="busId" placeholder="Enter bus Id" [(ngModel)]="busId" name="busId">
+                        </div>
+                        <div style="font-weight: bold; color: rgb(151, 20, 20); margin-left: 140px; text-align: center;" class="error-message">
+
+                            {{ errormessage }}
+            
+                        </div>
+                        <div class="button-container">
+                            <button class="btn btn-primary btn-sm" type="submit" (click)="addschedule()">Add Schedule</button >
+                        </div>
+                    
+                    
+                        
+
+
+                    </form>
+                </div>
             </div>
         </div>
+        <div class="col-md-4">
+            <app-viewroute></app-viewroute>
+        </div>
+    
     </div>
 
+    
+
 </div>
+

@@ -1,17 +1,3 @@
-/* .about-us-container {
-
-    position: absolute;
-
-    top: 45rem;
-
-    padding-left: 14px;
-
-    margin-block: 1rem;
-    
-
-   
-
-  } */
 
 
 
@@ -27,7 +13,7 @@
     background-color: rgb(238, 237, 240);
 
     background-image: linear-gradient(#e9e3e3, #810808);
-    
+    color: black;
 
    
 
@@ -73,7 +59,7 @@
 
   .contain {
 
-    background-color: rgb(19, 18, 18);
+    /* background-color: rgb(19, 18, 18); */
 
     text-align: center;
 
@@ -81,14 +67,14 @@
 
    
 
-    color: rgba(255, 254, 254, 0.959);
+    color: black;
 
     
   }
 
   .text-container  {
 
-    color: white;
+    color: black;
 
     font-size: 1.05rem;
 

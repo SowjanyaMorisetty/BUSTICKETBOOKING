@@ -1,0 +1,23 @@
+<div class="route">
+    <table class="awesome-table">
+        <thead>
+        <tr>
+            <th>Route Id</th>
+            <th>Source</th>
+            <th>Destination</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let routee of route; let i = index">
+            <td>{{ routee.routeId }}</td>
+            <td>{{ routee.source }}</td>
+            <td>{{ routee.destination }}</td>
+            
+            
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+

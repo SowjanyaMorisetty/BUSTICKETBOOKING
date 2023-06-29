@@ -42,10 +42,13 @@
                 <button class="btn btn-primary" (click)="search()" (click)="searchbus()" (click)="getfare()"
                     style="background-color:#A80A1D">Search</button>
             </div>
-            <div>
-                {{errorMessage}}
-            </div>
+            
+            
         </div>
+        <div style="color:black; text-align: center; font-weight: bolder;">
+            {{errorMessage}}
+        </div>
+       
 
         <div class="container" *ngIf="schedules.length>0" class="awesome-table">
             <div class="card bus-card" *ngFor="let schedule of schedules; let i = index">
@@ -75,7 +78,7 @@
                                 <span class="bus-departure">Departure:<br>{{ schedule.departureTime }}</span>
                             </div>
                             <div class="row">
-                                <span class="bus-departure">Arrival:<br>{{ schedule.arrivalTime }}</span>
+                                <span class="bus-departure">Running Time:<br>{{ fare[i].runningTime }}</span>
                             </div>
                         </div>
 
@@ -87,7 +90,8 @@
 
                         <div class="col-lg-3">
                             <div class="row">
-                                <span class="bus-fare">&#x20B9;{{ fare[i] }}</span>
+                                
+                                <span class="bus-fare">&#x20B9;{{ fare[i].fare }}</span>
                             </div>
                             <div class="row">
                                 <span class="bus-seats">{{ busDto[i].totalSeats }} seats</span>
@@ -98,7 +102,7 @@
                     <div class="row justify-content-end">
                         <div class="col-lg-12">
                             <button class="btnview btn-primary float-right" type="submit" class="book-button"
-                                (click)="getseats(schedule.scheduleId)" (click)="setfare(fare[i])" (click)="set()"
+                                (click)="getseats(schedule.scheduleId)" (click)="setfare(fare[i].fare)" (click)="set()"
                                 routerLink="/seatavailability"
                                 style="background-color:#A80A1D; border: none; border-radius: 3px; font-size: small; color: white; height: 30px;">VIEW
                                 SEATS</button>

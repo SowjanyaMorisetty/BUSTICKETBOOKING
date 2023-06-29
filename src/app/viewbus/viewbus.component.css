@@ -1,9 +1,106 @@
+.row {
+
+ 
+
+   
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: 50px;
+
+ 
+
+ 
+
+}
+
 .body{
 
-    background: linear-gradient(to bottom, #000000, #000000);
+  background-image: linear-gradient(to bottom, rgba(138, 37, 37, 0.7), rgba(31, 27, 27, 0.7));
 
-  padding-top: 150px; /* Add padding to create space */
+  /* padding-top: 260px;
 
-    opacity: 0.9;
+  padding-top: 150px; */
 
-  }
+  /* height: 100vh; */
+
+  margin: auto;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  padding-left: 50px;
+
+
+
+
+ 
+
+}
+
+
+
+.card{
+
+  width: 350px;
+
+  /* margin-top: 20px; */
+
+  padding: 20px;
+
+  background-color: rgba(0, 0, 0, 0.6);
+
+  border-radius: 4px;
+
+  box-shadow: 0 2px 4px rgba(3, 3, 3, 0.1);
+
+  border: 2px solid black;
+
+ 
+
+
+
+}
+
+
+
+
+
+.para{
+
+  line-height: 5px;
+
+  padding-left: 20px;
+
+  color: rgb(209, 212, 214);
+
+ 
+
+}
+
+.para1{
+
+  line-height: 5px;
+
+  padding-top: 15px;
+
+  padding-left: 20px;
+
+  color:rgb(209, 212, 214);
+
+ 
+
+}
+
+h1{
+
+  text-align: center;
+
+  /* margin-top: 70px; */
+
+}

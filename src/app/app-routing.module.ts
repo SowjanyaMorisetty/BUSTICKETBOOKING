@@ -16,6 +16,7 @@ import { UpdatebusComponent } from './updatebus/updatebus.component';
 import { ViewbusComponent } from './viewbus/viewbus.component';
 import { ViewscheduleComponent } from './viewschedule/viewschedule.component';
 import { AddscheduleComponent } from './addschedule/addschedule.component';
+import { ViewrouteComponent } from './viewroute/viewroute.component';
 
 const routes: Routes = [
   {
@@ -70,10 +71,10 @@ const routes: Routes = [
     path:"mainhomepage",
     component:MainhomepageComponent
   },
-  // {
-  //   path:"schedulepage",
-  //   component:ScheduleComponent
-  // },
+  {
+    path:"viewroute",
+    component:ViewrouteComponent
+  },
   {
     path:"addschedule",
     component:AddscheduleComponent
